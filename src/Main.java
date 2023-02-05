@@ -2,19 +2,13 @@ import java.time.LocalDate;
 
 public class Main {
     public static void checkYear(int year) {
-        int proverka = year % 4;
-        int proverka1 = year % 100;
-        int proverka2 = year % 400;
-        if (proverka == 0) {
-            if (proverka1 != 0 || proverka2 == 0) {
-                System.out.println(year + " - високосный год");
-            } else {
-                System.out.println(year + " - невисокосный год");
-            }
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println(year + " - високосный год");
         } else {
             System.out.println(year + " - невисокосный год");
         }
     }
+
 
     public static void checkUserParameters(int yearOfRelease, int clientOS) {
         int currentYear = LocalDate.now().getYear();
